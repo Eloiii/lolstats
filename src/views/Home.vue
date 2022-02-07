@@ -46,7 +46,6 @@ export default {
     this.accountId = this.data.accountId
     this.puuid = this.data.puuid
     this.matches = await this.fetchApi("https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/" + this.puuid + "/ids?start=0&count=10&api_key=" + this.api_key)
-    this.lastMatch = await this.fetchApi("https://europe.api.riotgames.com/lol/match/v5/matches/" + this.matches[0] + "?api_key=" + this.api_key)
     for (let i = 0; i < this.matches.length; i++) {
       this.matches[i] = await this.fetchApi("https://europe.api.riotgames.com/lol/match/v5/matches/" + this.matches[i] + "?api_key=" + this.api_key)
     }
